@@ -58,7 +58,7 @@ public class ShortUrlDemo {
         String shortUrl = demo.getShortUrl("http://redis.com/index.html");
         System.out.println("页面上展示的短链接地址为：" + shortUrl);
 
-        for(int i = 0; i < 152; i++) {
+        for(int i = 0; i < 100; i++) {
             demo.incrementShortUrlAccessCount(shortUrl);
         }
 
