@@ -1,1 +1,1 @@
-# redis-demo
+#对redis数据的简单学习
