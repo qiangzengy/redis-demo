@@ -95,14 +95,12 @@ public class BlogDemo {
         // 发表一篇博客
         long id = demo.getBlogId();
 
-        Map<String, String> blog = new HashMap<String, String>();
-        blog.put("id", String.valueOf(id));
-        blog.put("title", "我喜欢学习Redis");
-        blog.put("content", "学习Redis是一件特别快乐的事情");
-        blog.put("author", "石杉");
-        blog.put("time", "2020-01-01 10:00:00");
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("title","java技术博客");
+        map.put("content","学习redis的一次笔记");
+        map.put("anthor","qiangzneg");
 
-        demo.publishBlog(id, blog);
+        demo.publishBlog(id, map);
 
         // 更新一篇博客
         Map<String, String> updatedBlog = new HashMap<String, String>();
@@ -115,14 +113,14 @@ public class BlogDemo {
         for(int i = 0; i < 20; i++) {
             id = demo.getBlogId();
 
-            blog = new HashMap<String, String>();
-            blog.put("id", String.valueOf(id));
-            blog.put("title", "第" + (i + 1) + "篇博客");
-            blog.put("content", "学习第" + (i + 1) + "篇博客，是一件很有意思的事情");
-            blog.put("author", "石杉");
-            blog.put("time", "2020-01-01 10:00:00");
+            map = new HashMap<String, String>();
+            map.put("id", String.valueOf(id));
+            map.put("title", "第" + (i + 1) + "篇博客");
+            map.put("content", "学习第" + (i + 1) + "篇博客，是一件很有意思的事情");
+            map.put("author", "qiangzengy");
+            map.put("time", "2020-01-01 10:00:00");
 
-            demo.publishBlog(id, blog);
+            demo.publishBlog(id, map);
         }
 
         // 有人分页浏览所有的博客，先浏览第一页
@@ -132,8 +130,8 @@ public class BlogDemo {
         List<String> blogPage = demo.findBlogByPage(pageNo, pageSize);
         System.out.println("展示第一页的博客......");
         for(String blogId : blogPage) {
-            blog = demo.findBlogById(Long.valueOf(blogId));
-            System.out.println(blog);
+            map = demo.findBlogById(Long.valueOf(blogId));
+            System.out.println(map);
         }
 
         pageNo = 2;
@@ -141,8 +139,8 @@ public class BlogDemo {
         blogPage = demo.findBlogByPage(pageNo, pageSize);
         System.out.println("展示第二页的博客......");
         for(String blogId : blogPage) {
-            blog = demo.findBlogById(Long.valueOf(blogId));
-            System.out.println(blog);
+            map = demo.findBlogById(Long.valueOf(blogId));
+            System.out.println(map);
         }
 
         // 有别人点击进去查看你的博客的详细内容，并且进行点赞
