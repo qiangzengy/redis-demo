@@ -27,7 +27,7 @@ public class MicroBlogDemo {
      * @param userId
      * @param followUserId
      */
-    public void unfollow(long userId, long followUserId) {
+    public void unFollow(long userId, long followUserId) {
         jedis.srem("user::" + followUserId + "::followers", String.valueOf(userId));
         jedis.srem("user::" + userId + "::follow_users", String.valueOf(followUserId));
     }
